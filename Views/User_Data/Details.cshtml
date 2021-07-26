@@ -1,0 +1,74 @@
+﻿@model TrueDynamicWeb.Models.User_Data
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User_Data</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShiftTiming)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShiftTiming)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManagerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManagerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManagerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManagerEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tower)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tower)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserDataId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

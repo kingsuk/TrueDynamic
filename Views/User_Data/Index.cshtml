@@ -1,0 +1,69 @@
+﻿@model IEnumerable<TrueDynamicWeb.Models.User_Data>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShiftTiming)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManagerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManagerEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tower)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShiftTiming)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManagerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManagerEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tower)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserDataId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserDataId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserDataId })
+        </td>
+    </tr>
+}
+
+</table>

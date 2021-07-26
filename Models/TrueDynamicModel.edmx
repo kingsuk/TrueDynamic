@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TrueDynamicDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TrueDynamicDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Url_call_track">
           <Key>
             <PropertyRef Name="ID" />
@@ -27,15 +27,29 @@
           <Property Name="interval_number" Type="int" />
           <Property Name="Report Name" Type="nvarchar(max)" />
           <Property Name="Status" Type="bit" />
+          <Property Name="TimeStamp" Type="datetime" />
           <Property Name="CreateDate" Type="datetimeoffset" Precision="7" Nullable="false" />
           <Property Name="UpdateDate" Type="datetimeoffset" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User_Data">
+          <Key>
+            <PropertyRef Name="UserDataId" />
+          </Key>
+          <Property Name="UserDataId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="UserEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="15" />
+          <Property Name="ShiftTiming" Type="varchar" MaxLength="2" />
+          <Property Name="ManagerName" Type="varchar" MaxLength="50" />
+          <Property Name="ManagerEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tower" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="TrueDynamicDBModelStoreContainer">
           <EntitySet Name="Url_call_track" EntityType="Self.Url_call_track" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Url_Config_tabl" EntityType="Self.Url_Config_tabl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Data" EntityType="Self.User_Data" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TrueDynamicDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -63,11 +77,26 @@
           <Property Name="Status" Type="Boolean" />
           <Property Name="CreateDate" Type="DateTimeOffset" Nullable="false" Precision="7" />
           <Property Name="UpdateDate" Type="DateTimeOffset" Nullable="false" Precision="7" />
+          <Property Name="TimeStamp" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityContainer Name="TrueDynamicDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Url_call_track" EntityType="Self.Url_call_track" />
           <EntitySet Name="Url_Config_tabl" EntityType="Self.Url_Config_tabl" />
+          <EntitySet Name="User_Data" EntityType="TrueDynamicDBModel.User_Data" />
         </EntityContainer>
+        <EntityType Name="User_Data">
+          <Key>
+            <PropertyRef Name="UserDataId" />
+          </Key>
+          <Property Name="UserDataId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ShiftTiming" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ManagerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ManagerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tower" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -89,6 +118,7 @@
           <EntitySetMapping Name="Url_Config_tabl">
             <EntityTypeMapping TypeName="TrueDynamicDBModel.Url_Config_tabl">
               <MappingFragment StoreEntitySet="Url_Config_tabl">
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Endpoint_name" ColumnName="Endpoint_name" />
                 <ScalarProperty Name="url" ColumnName="url" />
@@ -98,6 +128,20 @@
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Data">
+            <EntityTypeMapping TypeName="TrueDynamicDBModel.User_Data">
+              <MappingFragment StoreEntitySet="User_Data">
+                <ScalarProperty Name="Tower" ColumnName="Tower" />
+                <ScalarProperty Name="ManagerEmail" ColumnName="ManagerEmail" />
+                <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+                <ScalarProperty Name="ShiftTiming" ColumnName="ShiftTiming" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserDataId" ColumnName="UserDataId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

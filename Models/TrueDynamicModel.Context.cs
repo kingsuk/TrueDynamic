@@ -27,5 +27,6 @@ namespace TrueDynamicWeb.Models
     
         public virtual DbSet<Url_call_track> Url_call_track { get; set; }
         public virtual DbSet<Url_Config_tabl> Url_Config_tabl { get; set; }
+        public virtual DbSet<User_Data> User_Data { get; set; }
     }
 }

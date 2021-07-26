@@ -145,6 +145,7 @@
     <Compile Include="Controllers\UrlCallTrackController.cs" />
     <Compile Include="Controllers\UrlConfigController.cs" />
     <Compile Include="Controllers\Url_call_trackController.cs" />
+    <Compile Include="Controllers\User_DataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -167,6 +168,9 @@
       <DependentUpon>TrueDynamicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Url_Config_tabl.cs">
+      <DependentUpon>TrueDynamicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User_Data.cs">
       <DependentUpon>TrueDynamicModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -237,6 +241,11 @@
     <Content Include="Views\UrlCallTrack\Details.cshtml" />
     <Content Include="Views\UrlCallTrack\Edit.cshtml" />
     <Content Include="Views\UrlCallTrack\Index.cshtml" />
+    <Content Include="Views\User_Data\Create.cshtml" />
+    <Content Include="Views\User_Data\Delete.cshtml" />
+    <Content Include="Views\User_Data\Details.cshtml" />
+    <Content Include="Views\User_Data\Edit.cshtml" />
+    <Content Include="Views\User_Data\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
