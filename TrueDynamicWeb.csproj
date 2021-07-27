@@ -144,34 +144,33 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UrlCallTrackController.cs" />
     <Compile Include="Controllers\UrlConfigController.cs" />
-    <Compile Include="Controllers\Url_call_trackController.cs" />
     <Compile Include="Controllers\User_DataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\TrueDynamicModel.Context.cs">
+    <Compile Include="Models\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TrueDynamicModel.Context.tt</DependentUpon>
+      <DependentUpon>Model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TrueDynamicModel.cs">
+    <Compile Include="Models\Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TrueDynamicModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TrueDynamicModel.Designer.cs">
+    <Compile Include="Models\Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TrueDynamicModel.edmx</DependentUpon>
+      <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Url_call_track.cs">
-      <DependentUpon>TrueDynamicModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Url_Config_tabl.cs">
-      <DependentUpon>TrueDynamicModel.tt</DependentUpon>
+    <Compile Include="Models\Url_config_tabl.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User_Data.cs">
-      <DependentUpon>TrueDynamicModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -184,24 +183,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\TrueDynamicModel.Context.tt">
+    <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TrueDynamicModel.edmx</DependentUpon>
-      <LastGenOutput>TrueDynamicModel.Context.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\TrueDynamicModel.tt">
+    <Content Include="Models\Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TrueDynamicModel.edmx</DependentUpon>
-      <LastGenOutput>TrueDynamicModel.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\TrueDynamicModel.edmx">
+    <EntityDeploy Include="Models\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TrueDynamicModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\TrueDynamicModel.edmx.diagram">
-      <DependentUpon>TrueDynamicModel.edmx</DependentUpon>
+    <Content Include="Models\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\truedynamic - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\truedynamic - ReadOnly - FTP.pubxml" />
@@ -231,11 +230,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\UrlConfig\Create.cshtml" />
-    <Content Include="Views\UrlConfig\Delete.cshtml" />
-    <Content Include="Views\UrlConfig\Details.cshtml" />
-    <Content Include="Views\UrlConfig\Edit.cshtml" />
-    <Content Include="Views\UrlConfig\Index.cshtml" />
     <Content Include="Views\UrlCallTrack\Create.cshtml" />
     <Content Include="Views\UrlCallTrack\Delete.cshtml" />
     <Content Include="Views\UrlCallTrack\Details.cshtml" />
@@ -246,6 +240,11 @@
     <Content Include="Views\User_Data\Details.cshtml" />
     <Content Include="Views\User_Data\Edit.cshtml" />
     <Content Include="Views\User_Data\Index.cshtml" />
+    <Content Include="Views\UrlConfig\Create.cshtml" />
+    <Content Include="Views\UrlConfig\Delete.cshtml" />
+    <Content Include="Views\UrlConfig\Details.cshtml" />
+    <Content Include="Views\UrlConfig\Edit.cshtml" />
+    <Content Include="Views\UrlConfig\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

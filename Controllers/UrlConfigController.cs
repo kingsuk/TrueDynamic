@@ -18,7 +18,7 @@ namespace TrueDynamicWeb.Controllers
         // GET: UrlConfig
         public async Task<ActionResult> Index()
         {
-            return View(await db.Url_Config_tabl.ToListAsync());
+            return View(await db.Url_config_tabl.ToListAsync());
         }
 
         // GET: UrlConfig/Details/5
@@ -28,12 +28,12 @@ namespace TrueDynamicWeb.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Url_Config_tabl url_Config_tabl = await db.Url_Config_tabl.FindAsync(id);
-            if (url_Config_tabl == null)
+            Url_config_tabl url_config_tabl = await db.Url_config_tabl.FindAsync(id);
+            if (url_config_tabl == null)
             {
                 return HttpNotFound();
             }
-            return View(url_Config_tabl);
+            return View(url_config_tabl);
         }
 
         // GET: UrlConfig/Create
@@ -47,16 +47,16 @@ namespace TrueDynamicWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ID,Endpoint_name,url,url_param,interval_number,Report_Name,Status,CreateDate,UpdateDate")] Url_Config_tabl url_Config_tabl)
+        public async Task<ActionResult> Create([Bind(Include = "ID,Endpoint_name,url,url_param,interval_number,Report_Name,Status,TimeStamp,CreateDate,UpdateDate")] Url_config_tabl url_config_tabl)
         {
             if (ModelState.IsValid)
             {
-                db.Url_Config_tabl.Add(url_Config_tabl);
+                db.Url_config_tabl.Add(url_config_tabl);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(url_Config_tabl);
+            return View(url_config_tabl);
         }
 
         // GET: UrlConfig/Edit/5
@@ -66,12 +66,12 @@ namespace TrueDynamicWeb.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Url_Config_tabl url_Config_tabl = await db.Url_Config_tabl.FindAsync(id);
-            if (url_Config_tabl == null)
+            Url_config_tabl url_config_tabl = await db.Url_config_tabl.FindAsync(id);
+            if (url_config_tabl == null)
             {
                 return HttpNotFound();
             }
-            return View(url_Config_tabl);
+            return View(url_config_tabl);
         }
 
         // POST: UrlConfig/Edit/5
@@ -79,15 +79,15 @@ namespace TrueDynamicWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ID,Endpoint_name,url,url_param,interval_number,Report_Name,Status,CreateDate,UpdateDate")] Url_Config_tabl url_Config_tabl)
+        public async Task<ActionResult> Edit([Bind(Include = "ID,Endpoint_name,url,url_param,interval_number,Report_Name,Status,TimeStamp,CreateDate,UpdateDate")] Url_config_tabl url_config_tabl)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(url_Config_tabl).State = EntityState.Modified;
+                db.Entry(url_config_tabl).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(url_Config_tabl);
+            return View(url_config_tabl);
         }
 
         // GET: UrlConfig/Delete/5
@@ -97,12 +97,12 @@ namespace TrueDynamicWeb.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Url_Config_tabl url_Config_tabl = await db.Url_Config_tabl.FindAsync(id);
-            if (url_Config_tabl == null)
+            Url_config_tabl url_config_tabl = await db.Url_config_tabl.FindAsync(id);
+            if (url_config_tabl == null)
             {
                 return HttpNotFound();
             }
-            return View(url_Config_tabl);
+            return View(url_config_tabl);
         }
 
         // POST: UrlConfig/Delete/5
@@ -110,8 +110,8 @@ namespace TrueDynamicWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Url_Config_tabl url_Config_tabl = await db.Url_Config_tabl.FindAsync(id);
-            db.Url_Config_tabl.Remove(url_Config_tabl);
+            Url_config_tabl url_config_tabl = await db.Url_config_tabl.FindAsync(id);
+            db.Url_config_tabl.Remove(url_config_tabl);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

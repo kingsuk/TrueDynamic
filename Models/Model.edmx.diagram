@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b67c8b9188e24aee93e53b561788871b" Name="Diagram1">
+      <Diagram DiagramId="229a9b3861a64ef28f7fb9b2a83f200c" Name="Diagram1">
         <EntityTypeShape EntityType="TrueDynamicDBModel.Url_call_track" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TrueDynamicDBModel.Url_Config_tabl" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TrueDynamicDBModel.User_Data" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TrueDynamicDBModel.Url_config_tabl" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrueDynamicDBModel.User_Data" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

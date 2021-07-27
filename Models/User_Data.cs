@@ -11,24 +11,16 @@ namespace TrueDynamicWeb.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class User_Data
     {
         public int UserDataId { get; set; }
-        [Display(Name = "User Name")]
         public string Name { get; set; }
-        [Display(Name = "Accenture Email Id")]
         public string UserEmail { get; set; }
-        [Display(Name = "Phone Number")]
         public string PhoneNo { get; set; }
-        [Display(Name = "Shift Timing")]
         public string ShiftTiming { get; set; }
-        [Display(Name = "Manager's Name")]
         public string ManagerName { get; set; }
-        [Display(Name = "Manager's Email Id")]
         public string ManagerEmail { get; set; }
-        [Display(Name = "Tower Name")]
         public string Tower { get; set; }
     }
 }

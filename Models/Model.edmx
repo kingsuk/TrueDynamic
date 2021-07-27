@@ -16,7 +16,7 @@
           <Property Name="CreateDate" Type="datetimeoffset" Precision="7" Nullable="false" />
           <Property Name="UpdateDate" Type="datetimeoffset" Precision="7" Nullable="false" />
         </EntityType>
-        <EntityType Name="Url_Config_tabl">
+        <EntityType Name="Url_config_tabl">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -46,7 +46,7 @@
         </EntityType>
         <EntityContainer Name="TrueDynamicDBModelStoreContainer">
           <EntitySet Name="Url_call_track" EntityType="Self.Url_call_track" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Url_Config_tabl" EntityType="Self.Url_Config_tabl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Url_config_tabl" EntityType="Self.Url_config_tabl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User_Data" EntityType="Self.User_Data" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -64,7 +64,7 @@
           <Property Name="CreateDate" Type="DateTimeOffset" Nullable="false" Precision="7" />
           <Property Name="UpdateDate" Type="DateTimeOffset" Nullable="false" Precision="7" />
         </EntityType>
-        <EntityType Name="Url_Config_tabl">
+        <EntityType Name="Url_config_tabl">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -75,15 +75,10 @@
           <Property Name="interval_number" Type="Int32" />
           <Property Name="Report_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
+          <Property Name="TimeStamp" Type="DateTime" Precision="3" />
           <Property Name="CreateDate" Type="DateTimeOffset" Nullable="false" Precision="7" />
           <Property Name="UpdateDate" Type="DateTimeOffset" Nullable="false" Precision="7" />
-          <Property Name="TimeStamp" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityContainer Name="TrueDynamicDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Url_call_track" EntityType="Self.Url_call_track" />
-          <EntitySet Name="Url_Config_tabl" EntityType="Self.Url_Config_tabl" />
-          <EntitySet Name="User_Data" EntityType="TrueDynamicDBModel.User_Data" />
-        </EntityContainer>
         <EntityType Name="User_Data">
           <Key>
             <PropertyRef Name="UserDataId" />
@@ -97,6 +92,11 @@
           <Property Name="ManagerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Tower" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityContainer Name="TrueDynamicDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Url_call_track" EntityType="Self.Url_call_track" />
+          <EntitySet Name="Url_config_tabl" EntityType="Self.Url_config_tabl" />
+          <EntitySet Name="User_Data" EntityType="Self.User_Data" />
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -115,10 +115,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Url_Config_tabl">
-            <EntityTypeMapping TypeName="TrueDynamicDBModel.Url_Config_tabl">
-              <MappingFragment StoreEntitySet="Url_Config_tabl">
-                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <EntitySetMapping Name="Url_config_tabl">
+            <EntityTypeMapping TypeName="TrueDynamicDBModel.Url_config_tabl">
+              <MappingFragment StoreEntitySet="Url_config_tabl">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Endpoint_name" ColumnName="Endpoint_name" />
                 <ScalarProperty Name="url" ColumnName="url" />
@@ -126,6 +125,7 @@
                 <ScalarProperty Name="interval_number" ColumnName="interval_number" />
                 <ScalarProperty Name="Report_Name" ColumnName="Report Name" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
               </MappingFragment>
@@ -134,14 +134,14 @@
           <EntitySetMapping Name="User_Data">
             <EntityTypeMapping TypeName="TrueDynamicDBModel.User_Data">
               <MappingFragment StoreEntitySet="User_Data">
-                <ScalarProperty Name="Tower" ColumnName="Tower" />
-                <ScalarProperty Name="ManagerEmail" ColumnName="ManagerEmail" />
-                <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
-                <ScalarProperty Name="ShiftTiming" ColumnName="ShiftTiming" />
-                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
-                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="UserDataId" ColumnName="UserDataId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="ShiftTiming" ColumnName="ShiftTiming" />
+                <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+                <ScalarProperty Name="ManagerEmail" ColumnName="ManagerEmail" />
+                <ScalarProperty Name="Tower" ColumnName="Tower" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
