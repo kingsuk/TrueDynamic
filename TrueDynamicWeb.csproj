@@ -52,6 +52,9 @@
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -110,6 +113,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -140,11 +146,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UrlCallTrackController.cs" />
+    <Compile Include="Controllers\UrlConfigApilController.cs" />
     <Compile Include="Controllers\UrlConfigController.cs" />
-    <Compile Include="Controllers\User_DataController.cs" />
+    <Compile Include="Controllers\UserDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -235,16 +243,16 @@
     <Content Include="Views\UrlCallTrack\Details.cshtml" />
     <Content Include="Views\UrlCallTrack\Edit.cshtml" />
     <Content Include="Views\UrlCallTrack\Index.cshtml" />
-    <Content Include="Views\User_Data\Create.cshtml" />
-    <Content Include="Views\User_Data\Delete.cshtml" />
-    <Content Include="Views\User_Data\Details.cshtml" />
-    <Content Include="Views\User_Data\Edit.cshtml" />
-    <Content Include="Views\User_Data\Index.cshtml" />
     <Content Include="Views\UrlConfig\Create.cshtml" />
     <Content Include="Views\UrlConfig\Delete.cshtml" />
     <Content Include="Views\UrlConfig\Details.cshtml" />
     <Content Include="Views\UrlConfig\Edit.cshtml" />
     <Content Include="Views\UrlConfig\Index.cshtml" />
+    <Content Include="Views\UserData\Create.cshtml" />
+    <Content Include="Views\UserData\Delete.cshtml" />
+    <Content Include="Views\UserData\Details.cshtml" />
+    <Content Include="Views\UserData\Edit.cshtml" />
+    <Content Include="Views\UserData\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

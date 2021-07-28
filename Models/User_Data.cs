@@ -22,5 +22,6 @@ namespace TrueDynamicWeb.Models
         public string ManagerName { get; set; }
         public string ManagerEmail { get; set; }
         public string Tower { get; set; }
+        public string Password { get; set; }
     }
 }

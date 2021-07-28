@@ -37,7 +37,8 @@
           </Key>
           <Property Name="UserDataId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="UserEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PhoneNo" Type="varchar" MaxLength="15" />
           <Property Name="ShiftTiming" Type="varchar" MaxLength="2" />
           <Property Name="ManagerName" Type="varchar" MaxLength="50" />
@@ -85,12 +86,13 @@
           </Key>
           <Property Name="UserDataId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PhoneNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="ShiftTiming" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="ManagerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ManagerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Tower" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="TrueDynamicDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Url_call_track" EntityType="Self.Url_call_track" />
@@ -134,6 +136,7 @@
           <EntitySetMapping Name="User_Data">
             <EntityTypeMapping TypeName="TrueDynamicDBModel.User_Data">
               <MappingFragment StoreEntitySet="User_Data">
+                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserDataId" ColumnName="UserDataId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />

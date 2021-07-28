@@ -11,17 +11,17 @@ using TrueDynamicWeb.Models;
 
 namespace TrueDynamicWeb.Controllers
 {
-    public class User_DataController : Controller
+    public class UserDataController : Controller
     {
         private TrueDynamicDBEntities db = new TrueDynamicDBEntities();
 
-        // GET: User_Data
+        // GET: UserData
         public async Task<ActionResult> Index()
         {
             return View(await db.User_Data.ToListAsync());
         }
 
-        // GET: User_Data/Details/5
+        // GET: UserData/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,13 +36,13 @@ namespace TrueDynamicWeb.Controllers
             return View(user_Data);
         }
 
-        // GET: User_Data/Create
+        // GET: UserData/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: User_Data/Create
+        // POST: UserData/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -59,7 +59,7 @@ namespace TrueDynamicWeb.Controllers
             return View(user_Data);
         }
 
-        // GET: User_Data/Edit/5
+        // GET: UserData/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -74,7 +74,7 @@ namespace TrueDynamicWeb.Controllers
             return View(user_Data);
         }
 
-        // POST: User_Data/Edit/5
+        // POST: UserData/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -90,7 +90,7 @@ namespace TrueDynamicWeb.Controllers
             return View(user_Data);
         }
 
-        // GET: User_Data/Delete/5
+        // GET: UserData/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -105,7 +105,7 @@ namespace TrueDynamicWeb.Controllers
             return View(user_Data);
         }
 
-        // POST: User_Data/Delete/5
+        // POST: UserData/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
