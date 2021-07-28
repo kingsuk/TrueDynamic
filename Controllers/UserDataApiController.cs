@@ -80,11 +80,16 @@ namespace TrueDynamicWeb.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.User_Data.Add(user_Data);
-            await db.SaveChangesAsync();
+            var userDetails = await db.User_Data.Where(x => x.UserEmail == user_Data.UserEmail && x.Password == user_Data.Password).FirstOrDefaultAsync();
+            if (userDetails == null)
+            {
+                return NotFound();
+            }
 
-            return CreatedAtRoute("DefaultApi", new { id = user_Data.UserDataId }, user_Data);
+            return Ok(userDetails);
         }
+
+        
 
         // DELETE: api/UserDataAPI/5
         [ResponseType(typeof(User_Data))]
