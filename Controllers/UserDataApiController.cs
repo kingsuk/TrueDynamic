@@ -13,17 +13,17 @@ using TrueDynamicWeb.Models;
 
 namespace TrueDynamicWeb.Controllers
 {
-    public class UserDataApiController : ApiController
+    public class UserDataAPIController : ApiController
     {
         private TrueDynamicDBEntities db = new TrueDynamicDBEntities();
 
-        // GET: api/UserDataApi
+        // GET: api/UserDataAPI
         public IQueryable<User_Data> GetUser_Data()
         {
             return db.User_Data;
         }
 
-        // GET: api/UserDataApi/5
+        // GET: api/UserDataAPI/5
         [ResponseType(typeof(User_Data))]
         public async Task<IHttpActionResult> GetUser_Data(int id)
         {
@@ -36,7 +36,7 @@ namespace TrueDynamicWeb.Controllers
             return Ok(user_Data);
         }
 
-        // PUT: api/UserDataApi/5
+        // PUT: api/UserDataAPI/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutUser_Data(int id, User_Data user_Data)
         {
@@ -71,7 +71,7 @@ namespace TrueDynamicWeb.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/UserDataApi
+        // POST: api/UserDataAPI
         [ResponseType(typeof(User_Data))]
         public async Task<IHttpActionResult> PostUser_Data(User_Data user_Data)
         {
@@ -86,7 +86,7 @@ namespace TrueDynamicWeb.Controllers
             return CreatedAtRoute("DefaultApi", new { id = user_Data.UserDataId }, user_Data);
         }
 
-        // DELETE: api/UserDataApi/5
+        // DELETE: api/UserDataAPI/5
         [ResponseType(typeof(User_Data))]
         public async Task<IHttpActionResult> DeleteUser_Data(int id)
         {

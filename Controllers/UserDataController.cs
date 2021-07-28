@@ -20,6 +20,7 @@ namespace TrueDynamicWeb.Controllers
         {
             return View(await db.User_Data.ToListAsync());
         }
+       
 
         // GET: UserData/Details/5
         public async Task<ActionResult> Details(int? id)
@@ -79,7 +80,7 @@ namespace TrueDynamicWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "UserDataId,Name,UserEmail,PhoneNo,ShiftTiming,ManagerName,ManagerEmail,Tower")] User_Data user_Data)
+        public async Task<ActionResult> Edit([Bind(Include = "UserDataId,Name,UserEmail,PhoneNo,ShiftTiming,ManagerName,ManagerEmail,Tower,Password")] User_Data user_Data)
         {
             if (ModelState.IsValid)
             {
