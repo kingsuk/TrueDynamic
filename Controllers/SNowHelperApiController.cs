@@ -1,9 +1,11 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json.Linq;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using TrueDynamicWeb.Models;
 
@@ -24,14 +26,14 @@ namespace TrueDynamicWeb.Controllers
         }
 
         // POST: api/SNowHelperApi
-        public IHttpActionResult Post(Url_config_tabl UrlConfigtabl)
+        public async Task<IHttpActionResult> Post(Url_config_tabl UrlConfigtabl)
         {
             var client = new RestClient(UrlConfigtabl.url);
             var request = new RestRequest(Method.GET);
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("authorization", "Basic YXRtb3Myc25vdzpGUiU4Sm13cFU5NTZw");
-            IRestResponse response = client.Execute(request);
-            return Ok(response);
+            IRestResponse response = await client.ExecuteAsync(request);
+            return Ok(JObject.Parse(response.Content));
         }
 
         // PUT: api/SNowHelperApi/5
