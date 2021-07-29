@@ -11,18 +11,29 @@ namespace TrueDynamicWeb.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Url_config_tabl
     {
         public int ID { get; set; }
+        [Display(Name = "Report Name")]
         public string Endpoint_name { get; set; }
+        [Display(Name = "Endpoint URL")]
         public string url { get; set; }
+        [Display(Name = "URL Parameter")]
         public string url_param { get; set; }
+        [Display(Name = "Poling Interval")]
         public Nullable<int> interval_number { get; set; }
+        [Display(Name = "Callout Information")]
         public string Report_Name { get; set; }
+        [Display(Name = "Active")]
         public Nullable<bool> Status { get; set; }
+        [Display(Name = "Local Timestamp")]
         public Nullable<System.DateTime> TimeStamp { get; set; }
+        [Display(Name = "Created Date")]
         public System.DateTimeOffset CreateDate { get; set; }
+        [Display(Name = "Updated Date")]
         public System.DateTimeOffset UpdateDate { get; set; }
+       
     }
 }

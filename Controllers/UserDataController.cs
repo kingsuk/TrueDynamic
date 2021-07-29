@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using TrueDynamicWeb.Models;
+using System.Data.Entity.Validation;
 
 namespace TrueDynamicWeb.Controllers
 {
@@ -48,12 +49,19 @@ namespace TrueDynamicWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "UserDataId,Name,UserEmail,PhoneNo,ShiftTiming,ManagerName,ManagerEmail,Tower")] User_Data user_Data)
+        public async Task<ActionResult> Create([Bind(Include = "UserDataId,Name,UserEmail,PhoneNo,ShiftTiming,ManagerName,ManagerEmail,Tower,Password")] User_Data user_Data)
         {
             if (ModelState.IsValid)
             {
                 db.User_Data.Add(user_Data);
-                await db.SaveChangesAsync();
+                try { await db.SaveChangesAsync(); }
+                catch(DbEntityValidationException e) {
+                    foreach (var ve in e.EntityValidationErrors)
+                    {
+                     
+                    }
+                }
+                
                 return RedirectToAction("Index");
             }
 
