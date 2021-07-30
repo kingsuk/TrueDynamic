@@ -26,8 +26,22 @@ namespace TrueDynamicWeb.Controllers
         }
 
         // POST: api/SNowHelperApi
-        public async Task<IHttpActionResult> Post(Url_config_tabl UrlConfigtabl)
+        [ActionName("SnowCount")]
+        public async Task<IHttpActionResult> PostCount(Url_config_tabl UrlConfigtabl)
         {
+            var client = new RestClient(UrlConfigtabl.url);
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("authorization", "Basic YXRtb3Myc25vdzpGUiU4Sm13cFU5NTZw");
+            IRestResponse response = await client.ExecuteAsync(request);
+            return Ok(JObject.Parse(response.Content));
+        }
+
+        [ActionName("SnowContent")]
+        public async Task<IHttpActionResult> PostContent(Url_config_tabl UrlConfigtabl,int limit,int offset)
+        {
+            string newUrl = UrlConfigtabl.url.Replace("stats", "table").Replace("&sysparm_count=true", "")+ "&sysparm_limit="+limit+"&sysparm_offset="+offset;
+            return Ok(newUrl);
             var client = new RestClient(UrlConfigtabl.url);
             var request = new RestRequest(Method.GET);
             request.AddHeader("cache-control", "no-cache");
